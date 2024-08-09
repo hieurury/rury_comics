@@ -1,0 +1,34 @@
+.navbar {
+    z-index: 100;
+}
+.nav-user .nav-user-option {
+    padding: 4px 8px;
+    border: 1.5px solid #0006;
+    border-radius: 6px;
+    background: linear-gradient(to right, #1F1C2C 0%, #928DAB 51%, #1F1C2C 100%);
+    border: none;
+    background-size: 200% auto;
+    color: #fff;
+    font-size: 14px;
+    transition: all .5s ease;
+}
+.nav-user .nav-user-option:hover {
+    background-position: right center;
+    cursor: pointer;
+}
+.nav-user .nav-user-option span {
+    padding-left: 6px;
+}
+
+/* Drop menu */
+.show.me-drop-menu {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 600px;
+}
+.show.me-drop-menu li {
+    flex: 1 1 25%;
+}
+.show.me-drop-menu li a {
+    width: 100%;
+}

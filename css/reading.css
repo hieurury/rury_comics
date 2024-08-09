@@ -1,0 +1,65 @@
+.reading-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    box-shadow: 0 0 10px #0007;
+}
+.nav-title {
+    font-size: 22px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.selectors {
+    width: 30%;
+    padding: 6px 4px;
+    font-size: 18px;
+    border-radius: 4px;
+}
+.selectors a.dropdown-toggle{
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+}
+.selectors ul.dropdown-menu {
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    max-height: 150px;
+    overflow-y: scroll;
+}
+.nav-icon {
+    font-size: 30px;
+    font-weight: 600;
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px #0008;
+    cursor: pointer;
+}
+
+/* phần container */
+.container .content {
+    text-align: center;
+}
+.content img {
+    width: 70%;
+}
+
