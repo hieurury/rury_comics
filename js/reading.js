@@ -57,8 +57,15 @@ async function productLoad() {
     titleComic.innerHTML = `<h3>${comicName}</h3>`;
     titleComic.href = `product.html?api=${encodeURIComponent(API)}`;
     optionBtn.innerText = `Chương ${CURRENT_CHAPTER}`;
-    //
-    const CHAPTER_API = dataJson.data.item.chapters[0].server_data[CURRENT_CHAPTER].chapter_api_data;
+
+    //render content DOM
+
+    //get Current index
+    const CURRENT_INDEX = dataJson.data.item.chapters[0].server_data.findIndex(chapter => {
+        return CURRENT_CHAPTER == chapter.chapter_name;
+    })
+    //get chapter data
+    const CHAPTER_API = dataJson.data.item.chapters[0].server_data[CURRENT_INDEX].chapter_api_data;
     const chaptersJson = await fetchAPI(CHAPTER_API);
     console.log(chaptersJson);
     const CHAPTER_URL = `${chaptersJson.data.domain_cdn}/${chaptersJson.data.item.chapter_path}`;
