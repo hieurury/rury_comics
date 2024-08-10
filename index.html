@@ -36,15 +36,15 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto nav-underline js-nav-collection">
+          <div class="collapse navbar-collapse me-nav" id="navbarNav">
+            <ul class="navbar-nav nav-underline js-nav-collection">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#"
                   >Trang chủ</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Nổi bật</a>
+                <a class="nav-link" href="#">danh sách</a>
               </li>
               <li class="nav-item dropdown">
                 <button
@@ -67,6 +67,18 @@
                 </ul>
               </li>
             </ul>
+            <div class="nav-item-lg">
+              <div class="search-wrapper">
+                <i class="bi bi-search"></i>
+                <input placeholder="Nhập tên truyện cần tìm.." type="text">
+
+                <ul class="search-result d-none">
+                  <!-- render bằng api -->
+                   
+                </ul>
+
+              </div>
+            </div>
             <div class="nav-user">
               <div class="nav-user-option navbar-collapse">
                 <i style="font-size: 24px" class="bi bi-person-circle"></i>

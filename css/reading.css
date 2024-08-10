@@ -18,11 +18,12 @@
     cursor: pointer;
 }
 
-.selectors {
+.nav-item-lg {
     width: 30%;
     padding: 6px 4px;
     font-size: 18px;
     border-radius: 4px;
+    margin: auto;
 }
 .selectors a.dropdown-toggle{
     width: 100%;
