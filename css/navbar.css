@@ -99,3 +99,36 @@ ul.search-result {
 .search-result .search-result-content span {
     font-size: 12px;
 }
+
+@media screen and (max-width: 480px) {
+    .me-nav {
+        width: 100%;
+    }
+    /* phần này của phần thể loại (sup-menu) */
+    .show.show.me-drop-menu {
+        min-width: 100%;
+    }
+    /* phần này của thanh search */
+    .nav-item-lg {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    .nav-item-lg input {
+        font-size: 12px;
+    }
+    .search-result li img {
+        width: 50px;
+    }
+    .search-result div.result-title {
+        font-size: 14px;
+    }
+    /* phần slides */
+    .me-slide-inner {
+        width: 100% !important;
+        height: 150px !important;
+    }
+    /* phần items */
+    .me-comics {
+        flex: 0 0 50% !important;
+    }
+}
