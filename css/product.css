@@ -76,3 +76,57 @@
     background: #000;
     color: #fff;
 }
+
+@media screen and (max-width: 480px) {
+    .poster {
+        top: -20%;
+        min-height: 400px;
+        transform: translateY(-20%);
+    }
+    .poster-content {
+        flex-direction: column;
+        left: 0;
+        top: 10%;
+    }
+    .poster-img {
+        width: 100%;
+        height: 200px;
+        box-shadow: none;
+        border-radius: 0px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    .poster-img img {
+        width: 45%;
+        height: 100%;
+        box-shadow: 0 0 4px #0006;
+        border-radius: 6px;
+    }
+    .poster-about {
+        width: 100%;
+    }
+    .poster-title {
+        font-size: 16px;
+        margin: 2px 0;
+    }
+    .poster-description {
+        max-height: 100px;
+        overflow-y: scroll;
+        font-size: 12px;
+        font-style: italic;
+        margin: 2px 0;
+    }
+    .poster-types li {
+        font-size: 10px;
+    }
+    /* box controls */
+    .control-box a {
+        padding: 6px 12px;
+        font-size: 10px;
+        margin: 0 2px;
+    }
+    /* phần table */
+    .table {
+        font-size: 14px;
+    }
+}

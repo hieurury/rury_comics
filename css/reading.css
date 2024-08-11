@@ -38,7 +38,7 @@
     background-color: #fff;
     color: #000;
     font-size: 20px;
-    max-height: 150px;
+    max-height: 200px;
     overflow-y: scroll;
 }
 .nav-icon {
@@ -62,5 +62,45 @@
 }
 .content img {
     width: 70%;
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        display: flex;
+    }
+    /* phần title */
+    .nav-title {
+        max-width: 80%;
+    }
+    .nav-title h3{
+        font-size: 14px;
+    }
+    /* phần icons home */
+    .nav-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+    /* phần chapters */
+    .selectors {
+        order: 1;
+        font-size: 14px;
+        margin-top: 6px;
+    }
+    .selectors a.dropdown-toggle {
+        font-size: 14px;
+        padding: 2px 0;
+        height: 30px;
+    }
+    .dropdown-item {
+        font-size: 14px;
+    }
+    /* phần content */
+    .container {
+        padding: 0;
+    }
+    .content img {
+        width: 100%;
+    }
 }
 
