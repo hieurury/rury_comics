@@ -1,31 +1,6 @@
-function removeVietnameseTones(str) {
-    str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // Loại bỏ dấu
-    str = str.replace(/đ/g, 'd').replace(/Đ/g, 'D'); // Thay thế 'đ' và 'Đ'
-    return str;
-}
-
-function createSlug(str) {
-    str = str.toLowerCase(); // Chuyển thành chữ thường
-    str = removeVietnameseTones(str); // Loại bỏ dấu tiếng Việt
-    str = str.replace(/[^a-z0-9\s-]/g, ''); // Loại bỏ ký tự không phải chữ cái hoặc số
-    str = str.trim().replace(/\s+/g, '-'); // Thay khoảng trắng bằng dấu gạch ngang
-    str = str.replace(/-+/g, '-'); // Loại bỏ dấu gạch ngang thừa
-    return str;
-}
 
 //handler
 const navCollection = document.querySelectorAll('.js-nav-collection li.nav-item a');
-//Phần tìm kiếm truyện
-const API_CONFIG = {
-    SEARCH_URL: 'https://otruyenapi.com/v1/api/tim-kiem?keyword',
-    PRODUCT_URL: 'https://otruyenapi.com/v1/api/truyen-tranh',
-    THUMNAIL_URL: 'https://otruyenapi.com/uploads/comics',
-    async fetch(api) {
-        const dataAPI = await fetch(api);
-        const dataConvert = await dataAPI.json();
-        return dataConvert;
-    }
-}
 const NavbarApp = {
     timeOutId: null,
     navClearActive() {
@@ -99,9 +74,19 @@ const NavbarApp = {
             }, 1000)
         })
     },
+    typesEventhandler() {
+        const listType = document.querySelectorAll('ul.js-drop-menu li a');
+        listType.forEach(type => {
+            const typeText = type.getAttribute('value');
+            const api = `${API_CONFIG.TYPE_URL}/${typeText}`
+            type.href = `search.html?api=${encodeURIComponent(api)}`;
+        })
+        console.log(listType);
+    },
     start() {
         this.navbarOptionsEvent();
         this.searchEventHandler();
+        this.typesEventhandler();
     }
 }
 NavbarApp.start();

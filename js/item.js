@@ -23,7 +23,6 @@ async function loadData() {
     const dataJson = await fetchAPI(homePageApi);
     hiddenLoader();
     const dataItem = dataJson.data.items;
-    console.log(dataJson);
     let dataString = dataItem.map(item => {
         return `
             <div class="me-comics">
@@ -43,16 +42,13 @@ async function loadData() {
         `
     })
     const htmlElements = dataString.join('');
-    console.log(htmlElements);
     blogItem.innerHTML = htmlElements;
 
     const listItem = document.querySelectorAll('.me-comics .me-comics-item');
-    console.log(listItem);
     listItem.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
             const api = item.getAttribute('data-api');
-            console.log(api);
             window.location.href = `product.html?api=${encodeURIComponent(api)}`;
         })
     })

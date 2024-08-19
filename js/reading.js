@@ -75,7 +75,30 @@ async function productLoad() {
         )
     })
     const dataImageHTMLs = dataImageArray.join('');
-    console.log(dataImageHTMLs);
     content.innerHTML = dataImageHTMLs;
+
+    //khi chọn một chương bất kì
+    //when we choose another chapter
+    const dataSave = {
+        name: comicName,
+        latestChapter: CURRENT_CHAPTER,
+        api: API
+    }
+    APP.saveStorage(dataSave);
+
+    //next và revious
+    const footerBtns = document.querySelectorAll('.footer-options a');
+    let NEXT_CHAPTER = parseInt(CURRENT_CHAPTER) + 1;
+    let PRE_CHAPTER = parseInt(CURRENT_CHAPTER) - 1;
+    if(NEXT_CHAPTER > chaptersData.length) {
+        NEXT_CHAPTER = chaptersData.length;
+    }
+    const apiNextChapter = `${API}=${NEXT_CHAPTER}`;
+    const apiPreChapter = `${API}=${PRE_CHAPTER}`;
+    footerBtns[0].href = `reading.html?api=${apiPreChapter}`;
+    footerBtns[1].href = `reading.html?api=${apiNextChapter}`;
+    console.log(apiNextChapter, apiPreChapter);
+    console.log(footerBtns);
+
 }
 productLoad();

@@ -24,7 +24,7 @@
         style="box-shadow: 0 0 4px #0006"
       >
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Rury Comics</a>
+          <a class="navbar-brand" href="index.html">Rury Comics</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -39,7 +39,7 @@
           <div class="collapse navbar-collapse me-nav" id="navbarNav">
             <ul class="navbar-nav nav-underline js-nav-collection">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
+                <a class="nav-link active" aria-current="page" href="index.html"
                   >Trang chủ</a
                 >
               </li>
@@ -54,16 +54,15 @@
                 >
                   Thể loại
                 </button>
-                <ul class="dropdown-menu me-drop-menu">
-                  <li><a class="dropdown-item" href="#">Manga</a></li>
-                  <li><a class="dropdown-item" href="#">Phiêu lưu</a></li>
-                  <li><a class="dropdown-item" href="#">Chuyển sinh</a></li>
-                  <li><a class="dropdown-item" href="#">Huyền huyển</a></li>
-                  <li><a class="dropdown-item" href="#">Manhwa</a></li>
-                  <li><a class="dropdown-item" href="#">Mecha</a></li>
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Trinh thám</a></li>
-                  <li><a class="dropdown-item" href="#">3D</a></li>
+                <ul class="dropdown-menu me-drop-menu js-drop-menu">
+                  <li><a class="dropdown-item" value="manga">Manga</a></li>
+                  <li><a class="dropdown-item" value="adventure">Phiêu lưu</a></li>
+                  <li><a class="dropdown-item" value="isekai">Chuyển sinh</a></li>
+                  <li><a class="dropdown-item" value="fantasy">Huyền huyển</a></li>
+                  <li><a class="dropdown-item" value="manhwa">Manhwa</a></li>
+                  <li><a class="dropdown-item" value="mecha">Mecha</a></li>
+                  <li><a class="dropdown-item" value="action">Action</a></li>
+                  <li><a class="dropdown-item" value="magic">phép thuật</a></li>
                 </ul>
               </li>
             </ul>
@@ -147,8 +146,8 @@
 
     <script src="./vendor/jquery/jquery.min.js"></script>
     <script src="./vendor/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
     <script src="./js/navbar.js"></script>
     <script src="./js/item.js"></script>
-    <script src="main.js"></script>
   </body>
 </html>
