@@ -97,8 +97,6 @@ async function productLoad() {
     const apiPreChapter = `${API}=${PRE_CHAPTER}`;
     footerBtns[0].href = `reading.html?api=${apiPreChapter}`;
     footerBtns[1].href = `reading.html?api=${apiNextChapter}`;
-    console.log(apiNextChapter, apiPreChapter);
-    console.log(footerBtns);
 
 }
 productLoad();

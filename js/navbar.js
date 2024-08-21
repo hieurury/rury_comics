@@ -74,14 +74,21 @@ const NavbarApp = {
             }, 1000)
         })
     },
-    typesEventhandler() {
-        const listType = document.querySelectorAll('ul.js-drop-menu li a');
-        listType.forEach(type => {
-            const typeText = type.getAttribute('value');
-            const api = `${API_CONFIG.TYPE_URL}/${typeText}`
-            type.href = `search.html?api=${encodeURIComponent(api)}`;
+    async typesEventhandler() {
+        const listType = document.querySelector('ul.js-drop-menu');
+        const dataJson = await API_CONFIG.fetch(API_CONFIG.TYPE_URL);
+        const dataTypes = dataJson.data.items;
+
+        const dataTypesArray = dataTypes.map(type => {
+            return (
+                `<li>
+                    <a class="dropdown-item" href="${API_CONFIG.TYPE_URL}/${type.slug}">${type.name}</a>
+                </li>`
+            )
         })
-        console.log(listType);
+        console.log(dataTypesArray);
+        const dataTypesHTMLs = dataTypesArray.join('');
+        listType.innerHTML = dataTypesHTMLs;
     },
     start() {
         this.navbarOptionsEvent();

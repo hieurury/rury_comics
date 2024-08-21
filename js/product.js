@@ -31,6 +31,7 @@ async function productLoad() {
     //lấy dữ liệu từ api
     showLoader();
     const dataJson = await fetchAPI(api);
+    console.log(dataJson);
     hiddenLoader();
     const APP_DOMAIN = 'https://img.otruyenapi.com/uploads/comics';
 
@@ -77,7 +78,25 @@ async function productLoad() {
             window.location.href = `reading.html?api=${encodeURIComponent(api)}`
         }
     })
-    console.log(listChapter);
+
+    //các nút điều hướng
+    const chapterFirstBtn = document.querySelector('.control-box .chapter-first');
+    const chapterLatestBtn = document.querySelector('.control-box .chapter-latest');
+
+    const dataStorage = JSON.parse(localStorage.getItem('comicsSaved'));
+    const currentComicSaved = dataStorage.find(comic => comic.name === comicName);
+    const apiRedirect = `reading.html?api=${api}`
+    const firstChapter = chaptersData[0].chapter_name;
+    if(currentComicSaved) {
+        chapterLatestBtn.href = `${apiRedirect}=${currentComicSaved.latestChapter}`;
+    } else {
+        chapterLatestBtn.href = `${apiRedirect}=${firstChapter}`;
+    }
+    chapterFirstBtn.href = `${apiRedirect}=${firstChapter}`
+
+
+
+    console.log(chapterFirstBtn, chapterLatestBtn);
     console.log(dataJson);
 }
 productLoad();
